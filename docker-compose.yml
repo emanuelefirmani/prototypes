@@ -1,16 +1,10 @@
 rabbit:
     image: rabbitmq:3-management
     ports:
+      - "5672:5672"
       - "15672:15672"
 redis:
     image: redis
-web:
-    image: adunicorn/issuing
-    ports:
-      - "9000:9000"
-    links:
-      - redis
-      - rabbit
 rabbitconsumer:
     image: adunicorn/rabbitconsumer
     links:
