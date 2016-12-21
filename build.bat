@@ -1,11 +1,6 @@
 @echo off
 
-cd RabbitConsumer
-build.bat
-cd ..
-
-cd IssuingService
-build.bat
-cd ..
+docker pull redis
+docker pull rabbitmq:3-management
 
 echo Done
