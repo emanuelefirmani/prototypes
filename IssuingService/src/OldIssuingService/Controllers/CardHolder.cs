@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using System.Net;
 using System.Web.Http;
-using OldIssuingService.EF;
 using CardHolder = OldIssuingService.Models.CardHolder;
 
 namespace OldIssuingService.Controllers
@@ -15,7 +14,7 @@ namespace OldIssuingService.Controllers
             if (id == "1")
                 return new CardHolder {ID = "1", Firstname = "Marco", Lastname = "Bernasconi"};
 
-            using (var context = new MiniIssuingEntities())
+            using (var context = new EF.MiniIssuingEntities())
             {
                 var cardHolder = context.CardHolder.FirstOrDefault(x => x.ID == id);
                 if(cardHolder == null)
@@ -34,7 +33,7 @@ namespace OldIssuingService.Controllers
         [HttpPost]
         public void Add(CardHolder cardHolder)
         {
-            using (var context = new MiniIssuingEntities())
+            using (var context = new EF.MiniIssuingEntities())
             {
                 using (var dbContextTransaction = context.Database.BeginTransaction())
                 {

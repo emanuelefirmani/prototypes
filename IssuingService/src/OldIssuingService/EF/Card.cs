@@ -12,19 +12,12 @@ namespace OldIssuingService.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class CardHolder
+    public partial class Card
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CardHolder()
-        {
-            this.Card = new HashSet<Card>();
-        }
-    
         public string ID { get; set; }
-        public string Name { get; set; }
-        public string Lastname { get; set; }
+        public string CardHolderId { get; set; }
+        public string EmbossingLine { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Card> Card { get; set; }
+        public virtual CardHolder CardHolder { get; set; }
     }
 }

@@ -86,7 +86,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Card.cs" />
     <Compile Include="Controllers\CardHolder.cs" />
+    <Compile Include="EF\Card.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\CardHolder.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -105,6 +109,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Entities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EF\Log.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardHolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

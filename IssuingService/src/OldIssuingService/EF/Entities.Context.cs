@@ -26,5 +26,7 @@ namespace OldIssuingService.EF
         }
     
         public virtual DbSet<CardHolder> CardHolder { get; set; }
+        public virtual DbSet<Card> Card { get; set; }
+        public virtual DbSet<Log> Log { get; set; }
     }
 }
