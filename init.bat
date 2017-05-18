@@ -1,7 +1,7 @@
 ECHO Creating machine node1
 docker-machine create node1 -d virtualbox
 docker-machine stop node1
-VBoxManage.exe sharedfolder add node1 --name "/work" --hostpath "\\?\C:\Work\Git\" --automount
+VBoxManage.exe sharedfolder add node1 --automount --name "/work" --hostpath "c:\Work\Git\"
 docker-machine start node1
 docker-machine regenerate-certs -f node1
 

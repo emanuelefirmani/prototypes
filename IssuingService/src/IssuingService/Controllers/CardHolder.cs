@@ -31,7 +31,6 @@ namespace IssuingService.Controllers
         [HttpGet]
         public long GetCouter()
         {
-            
             try
             {
                 var redis = new RedisClient("redis", 6379);
