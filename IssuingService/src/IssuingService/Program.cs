@@ -4,8 +4,11 @@ using Microsoft.Owin.Hosting;
 
 namespace IssuingService
 {
-    class Program
+    public class Program
     {
+        public const string RedisPassword = "redis";
+        public const string RedisHostName = "rabbit.service.svc";
+
         static void Main(string[] args)
         {
             string baseAddress = "http://*:5000/";

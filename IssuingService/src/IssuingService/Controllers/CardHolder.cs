@@ -33,7 +33,7 @@ namespace IssuingService.Controllers
         {
             try
             {
-                var redis = new RedisClient("redis", 6379);
+                var redis = new RedisClient(Program.RedisHostName, 6379, Program.RedisPassword);
 
                 var counter = redis.Increment("counter", 1);
                 return counter;
@@ -54,7 +54,7 @@ namespace IssuingService.Controllers
             if (id == "1")
                 return new CardHolder {ID = "1", Firstname = "Marco", Lastname = "Bernasconi"};
 
-            var redis = new RedisClient("redis", 6379);
+            var redis = new RedisClient(Program.RedisHostName, 6379, Program.RedisPassword);
             var cardHolder = redis.Get<CardHolder>("cardholder_" + id);
             if(cardHolder == null)
                 throw  new HttpResponseException(HttpStatusCode.NotFound);
